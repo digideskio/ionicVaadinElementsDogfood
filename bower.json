@@ -1,0 +1,14 @@
+{
+  "name": "HelloIonic",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.2.4"
+  },
+  "dependencies": {
+    "paper-input": "PolymerElements/paper-input#^1.1.10",
+    "vaadin-date-picker": "^1.0.0-alpha4",
+    "vaadin-upload": "^1.0.0-alpha2",
+    "vaadin-combo-box": "^1.0.0-beta1",
+    "vaadin-grid": "^1.0.0"
+  }
+}
