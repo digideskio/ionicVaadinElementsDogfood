@@ -50,6 +50,17 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         controller: 'GridCtrl'
       }
     }
+  })
+
+
+  .state('app.expense', {
+    url: '/expense',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/expense-manager.html',
+        controller: 'ExpenseManagerCtrl'
+      }
+    }
   });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/register');

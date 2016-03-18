@@ -64,7 +64,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('RegisterCtrl', function($scope) {
-  $scope.date = "2015-02-04";
+  $scope.date = "";
   $scope.items = ['Bono', 'Kiss', 'John Lennon', 'Celine Dion'];
 })
 
@@ -75,7 +75,7 @@ angular.module('starter.controllers', [])
     var grid = document.querySelector('#my-grid-with-template');
 
     template.onSelect = function() {
-      if(grid.selection.selected().length === 0) {
+      if (grid.selection.selected().length === 0) {
         template.selected = null;
       } else {
         template.selected = template.users[grid.selection.selected()];
@@ -85,8 +85,8 @@ angular.module('starter.controllers', [])
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
 
-      if (xhr.readyState == XMLHttpRequest.DONE ) {
-        if(xhr.status == 200){
+      if (xhr.readyState == XMLHttpRequest.DONE) {
+        if (xhr.status == 200) {
           template.users = JSON.parse(xhr.responseText).results;
         }
       }
@@ -95,5 +95,43 @@ angular.module('starter.controllers', [])
     xhr.send();
   });
 })
+
+.controller('ExpenseManagerCtrl', function($scope) {
+  $scope.merchants = ["Office supplies", "Shuttle", "Breakfast", "Restaurant", "Electronics", "Hotel", "Taxi", "Ride sharing", "Fast food", "Parking", "Rental car", "Airline"];
+
+  $scope.generateGridData = function() {
+    var expenses = [];
+    var dates = ["2016-02-07", "2016-02-06", "2016-02-05", "2016-02-04"];
+    var merchants = ["Shuttle", "Turku", "Wings", "Vaadiners"];
+    var total = ["$752.76", "$421.12", "$511.41", "$421.12"];
+    var status = ["New", "Reimbursed", "Salary", "Traveling invoice"];
+    var comment = ["Expense from my business trip.", "Expense from my holiday.", "Expense from my travelling.", "Expense from my business."];
+    for (var i = 0; i < 400; i++) {
+      var row = [];
+      [dates, merchants, total, status, comment].forEach(function(array) {
+        row.push(array[Math.floor(Math.random() * array.length)]);
+      });
+      expenses.push(row);
+    }
+    window.addEventListener('WebComponentsReady', function() {
+      document.querySelector('vaadin-grid').items = expenses;
+    });
+    setTimeout(function(){
+      document.querySelector('vaadin-grid').items = expenses;
+    }, 5000);
+    setTimeout(function(){
+      document.querySelector('vaadin-grid').items = expenses;
+    }, 10000);
+    //console.log(document.querySelector('vaadin-grid'));
+    //document.querySelector('vaadin-grid').items = expenses;
+    //console.log(expenses);
+    $scope.expenses = expenses;
+  };
+  $scope.generateGridData();
+  //console.log();
+})
+
+
+
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {});

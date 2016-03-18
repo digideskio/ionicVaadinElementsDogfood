@@ -1,1 +1,69 @@
 /* Empty. Add your own CSS if you like */
+
+body {
+}
+
+ion-header-bar {
+  background: #37474F !important;
+}
+
+.header-item {
+  color: #ffffff !important;
+  font-family: Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif !important;
+}
+
+.ion-navicon {
+  color: #ffffff !important;
+}
+
+.total-bar {
+  background-color: #80CBC4;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.total {
+  font-size: 15px !important;
+  color: #ffffff;
+}
+
+.sum {
+  font-size: 25px !important;
+  margin-left: 6px;
+  color: #ffffff;
+  font-weight: 200;
+}
+
+.filters {
+  padding: 0 16px;
+  margin-bottom: 10px;
+}
+
+vaadin-combo-box #input {
+  height: auto;
+}
+
+.flex {
+    flex: 1;
+}
+
+
+.scroll {
+    display: flex;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+    height: 99%;
+}
+
+.vaadin-grid-header .vaadin-grid-cell {
+  background: #37474F !important;
+}
+
+.vaadin-grid-header span {
+  color: #ccc !important;
+}

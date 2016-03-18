@@ -1,0 +1,26 @@
+<ion-view view-title="Expense Manager">
+  <ion-content>
+    <div class="bar bar-header total-bar">
+      <div class="total">
+        Total
+      </div>
+      <div class="sum">
+        $2,942.00
+      </div>
+    </div>
+    <div class="filters">
+      <vaadin-combo-box label="Merchant" items="{{merchants}}"></vaadin-combo-box>
+    </div>
+    <vaadin-grid class="flex">
+      <table>
+        <colgroup>
+          <col name="date" sortable>
+          <col name="merchant" sortable>
+          <col name="total" sortable>
+          <col name="status" sortable>
+          <col name="comment">
+        </colgroup>
+      </table>
+    </vaadin-grid>
+  </ion-content>
+</ion-view>
